@@ -10,18 +10,18 @@ def show_sidebar(on_change_function, logout_function):
         group_alignment=-1.0, # Öğeleri en tepeye yaslar
         destinations=[
             ft.NavigationRailDestination(
-                icon=ft.icons.DASHBOARD_OUTLINED,
-                selected_icon=ft.icons.DASHBOARD,
+                icon=ft.Icons.DASHBOARD_OUTLINED,
+                selected_icon=ft.Icons.DASHBOARD,
                 label="Özet",
             ),
             ft.NavigationRailDestination(
-                icon=ft.icons.HOME_WORK_OUTLINED,
-                selected_icon=ft.icons.HOME_WORK,
+                icon=ft.Icons.HOME_WORK_OUTLINED,
+                selected_icon=ft.Icons.HOME_WORK,
                 label="Portföy",
             ),
             ft.NavigationRailDestination(
-                icon=ft.icons.ADD_CIRCLE_OUTLINE,
-                selected_icon=ft.icons.ADD_CIRCLE,
+                icon=ft.Icons.ADD_CIRCLE_OUTLINE,
+                selected_icon=ft.Icons.ADD_CIRCLE,
                 label="İlan Ekle",
             ),
         ],
@@ -36,18 +36,18 @@ def show_sidebar(on_change_function, logout_function):
                 rail, # Üstteki menüler
                 ft.Container( # Çıkış butonu alt alanı
                     content=ft.IconButton(
-                        icon=ft.icons.LOGOUT_ROUNDED,
-                        icon_color=ft.colors.RED_400,
+                        icon=ft.Icons.LOGOUT_ROUNDED,
+                        icon_color=ft.Colors.RED_400,
                         icon_size=35,
                         tooltip="Güvenli Çıkış",
                         on_click=logout_function
                     ),
                     padding=ft.padding.only(bottom=20),
-                    alignment=ft.alignment.center
+                    alignment=ft.Alignment.CENTER
                 ),
             ],
             expand=True,
         ),
         width=110,
-        bgcolor=ft.colors.SURFACE_CONTAINER_HIGHEST, # Renk hatası düzeltildi
+        bgcolor=ft.Colors.SURFACE_CONTAINER_HIGHEST, # Renk hatası düzeltildi
     )

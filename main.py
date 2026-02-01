@@ -37,7 +37,7 @@ def main(page: ft.Page):
         ft.Row(
             controls=[
                 sidebar,
-                ft.VerticalDivider(width=1, color=ft.colors.OUTLINE_VARIANT),
+                ft.VerticalDivider(width=1, color=ft.Colors.OUTLINE_VARIANT),
                 ft.Container(content_area, padding=30, expand=True)
             ],
             expand=True,
