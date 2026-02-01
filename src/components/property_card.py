@@ -31,7 +31,7 @@ def property_card(title, price, location, rooms, size, image_url):
                                     ft.Text(f"🛏️ {rooms}", size=12),
                                     ft.Text(f"📏 {size} m²", size=12),
                                 ],
-                                alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
+                                #alignment=ft.MainAxisAlignment.SPACE_BETWEEN,
                                 ),
                                 ft.Text(
                                     f"{price} ₺", 
