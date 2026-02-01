@@ -1,6 +1,7 @@
 import flet as ft
 from src.components.sidebar import show_sidebar
 from src.components.property_card import property_card
+from src.components.property_form import property_add_form
 
 def main(page: ft.Page):
     page.title = "NikoCRM v1.0 - Emlak Yönetimi"
@@ -44,7 +45,12 @@ def main(page: ft.Page):
             )
             content_area.controls.append(property_grid)
         elif index == 2:
-            content_area.controls.append(ft.Text("📝 Yeni İlan Kaydı", size=25, weight="bold"))
+            def handle_new_property(data):
+                print(f"Yeni İlan Alındı: {data}")
+                page.snack_bar = ft.SnackBar(ft.Text(f"{data['title']} başarıyla kaydedildi!"))
+                page.snack_bar.open = True
+                page.update()
+            content_area.controls.append(property_add_form(handle_new_property))
             
         page.update()
 
