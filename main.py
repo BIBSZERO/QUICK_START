@@ -1,5 +1,6 @@
 import flet as ft
 from src.components.sidebar import show_sidebar
+from src.components.property_card import property_card
 
 def main(page: ft.Page):
     page.title = "NikoCRM v1.0 - Emlak Yönetimi"
@@ -18,7 +19,30 @@ def main(page: ft.Page):
         if index == 0:
             content_area.controls.append(ft.Text("📊 Genel İstatistikler", size=25, weight="bold"))
         elif index == 1:
-            content_area.controls.append(ft.Text("🏠 Emlak Portföyü (Kastamonu)", size=25, weight="bold"))
+            content_area.controls.append(ft.Text("🏠 Emlak Portföyü", size=25, weight="bold"))
+            # Kartları yan yana dizen ızgara (Grid) yapısı
+            property_grid = ft.ResponsiveRow(
+                controls=[
+                    property_card(
+                        "Kuzeykent Modern Daire", 
+                        "3.500.000", 
+                        "Kastamonu / Kuzeykent", 
+                        "3+1", 
+                        145, 
+                        "https://picsum.photos/300/200?1" # Örnek resim
+                    ),
+                    property_card(
+                        "Merkez Satılık Dükkan", 
+                        "5.200.000", 
+                        "Kastamonu / Merkez", 
+                        "Dükkan", 
+                        800, 
+                        "https://picsum.photos/300/200?2"
+                    ),
+                ],
+                spacing=20,
+            )
+            content_area.controls.append(property_grid)
         elif index == 2:
             content_area.controls.append(ft.Text("📝 Yeni İlan Kaydı", size=25, weight="bold"))
             
