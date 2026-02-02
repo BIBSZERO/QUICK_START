@@ -1,0 +1,18 @@
+[
+    {
+        "title": "Kuzeykent Modern 3+1",
+        "price": "3.250.000",
+        "location": "Kuzeykent",
+        "rooms": "3+1",
+        "size": "145",
+        "image_url": "https://picsum.photos/300/200?random=1"
+    },
+    {
+        "title": "Merkez Ofis Katı",
+        "price": "5.500.000",
+        "location": "Merkez",
+        "rooms": "5+1",
+        "size": "210",
+        "image_url": "https://picsum.photos/300/200?random=2"
+    }
+]
