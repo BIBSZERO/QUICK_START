@@ -7,6 +7,8 @@ from src.components.property_form import property_add_form
 # View Imports
 from src.views.portfolio_view import portfolio_view
 
+from src.services.property_service import PropertiesService
+
 
 def main(page: ft.Page):
     page.title = "NikoCRM v1.0 - Emlak Yönetimi"
@@ -14,6 +16,8 @@ def main(page: ft.Page):
     page.padding = 0
     page.spacing = 0
 
+    property_api = PropertiesService()
+    
     # Ana İçerik Alanı
     content_area = ft.Column(expand=True, scroll=ft.ScrollMode.AUTO)
 
@@ -26,7 +30,7 @@ def main(page: ft.Page):
             content_area.controls.append(ft.Text("📊 Genel İstatistikler", size=25, weight="bold"))
 
         elif index == 1:
-            content_area.controls.append(portfolio_view())
+            content_area.controls.append(portfolio_view(page, property_api))
 
         elif index == 2:
             def handle_new_property(data):

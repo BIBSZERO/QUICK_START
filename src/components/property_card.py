@@ -2,7 +2,10 @@ import flet as ft
 
 def property_card(title, price, location, rooms, size, image_url):
     return ft.Card(
+        shadow_color=ft.Colors.ON_SURFACE_VARIANT,
         content=ft.Container(
+            width=300,
+            padding=10,
             content=ft.Column(
                 controls=[
                     ft.Image(src=image_url, width=300, height=200, fit="cover"),
@@ -15,7 +18,4 @@ def property_card(title, price, location, rooms, size, image_url):
                 spacing=10, 
             )
         ),
-        margin=10,
-        elevation=5,
-        width=320,
     )
