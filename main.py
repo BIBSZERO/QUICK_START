@@ -1,8 +1,10 @@
 import flet as ft
 
+# Component Imports
 from src.components.sidebar import show_sidebar
-
 from src.components.property_form import property_add_form
+
+# View Imports
 from src.views.portfolio_view import portfolio_view
 
 
@@ -22,6 +24,7 @@ def main(page: ft.Page):
         
         if index == 0:
             content_area.controls.append(ft.Text("📊 Genel İstatistikler", size=25, weight="bold"))
+
         elif index == 1:
             content_area.controls.append(portfolio_view())
 
