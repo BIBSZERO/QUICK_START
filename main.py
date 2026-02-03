@@ -25,7 +25,7 @@ def main(page: ft.Page):
         elif index == 1:
             content_area.controls.append(ft.Text("🏠 Emlak Portföyü", size=25, weight="bold"))
             # Kartları yan yana dizen ızgara (Grid) yapısı
-            property_grid = ft.ResponsiveRow(
+            property_grid = ft.Container(
                 controls=[
                     property_card(
                         "Kuzeykent Modern Daire", 
