@@ -1,9 +1,9 @@
 import flet as ft
 
 from src.components.sidebar import show_sidebar
-from src.components.property_card import property_card
-from src.components.property_form import property_add_form
 
+from src.components.property_form import property_add_form
+from src.views.portfolio_view import portfolio_view
 
 
 def main(page: ft.Page):
@@ -23,30 +23,8 @@ def main(page: ft.Page):
         if index == 0:
             content_area.controls.append(ft.Text("📊 Genel İstatistikler", size=25, weight="bold"))
         elif index == 1:
-            content_area.controls.append(ft.Text("🏠 Emlak Portföyü", size=25, weight="bold"))
-            # Kartları yan yana dizen ızgara (Grid) yapısı
-            property_grid = ft.Container(
-                controls=[
-                    property_card(
-                        "Kuzeykent Modern Daire", 
-                        "3.500.000", 
-                        "Kastamonu / Kuzeykent", 
-                        "3+1", 
-                        145, 
-                        "https://picsum.photos/300/200?1" # Örnek resim
-                    ),
-                    property_card(
-                        "Merkez Satılık Dükkan", 
-                        "5.200.000", 
-                        "Kastamonu / Merkez", 
-                        "Dükkan", 
-                        800, 
-                        "https://picsum.photos/300/200?2"
-                    ),
-                ],
-                spacing=20,
-            )
-            content_area.controls.append(property_grid)
+            content_area.controls.append(portfolio_view())
+
         elif index == 2:
             def handle_new_property(data):
                 print(f"Yeni İlan Alındı: {data}")
